@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Details — RunPulse India</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css">
+<style>.line-clamp-3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}</style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<div id="cookieBanner" class="hidden fixed bottom-0 inset-x-0 z-50 bg-white border-t border-gray-200 shadow-2xl">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center gap-4 justify-between">
+    <div>
+      <p class="font-semibold text-sm text-gray-900">Privacy Controls</p>
+      <p class="text-xs text-gray-500 mt-0.5">We use cookies to keep the site secure, remember your preferences, and understand usage patterns.</p>
+    </div>
+    <div class="flex gap-2 shrink-0">
+      <button id="cookieNecessaryBtn" class="text-xs sm:text-sm font-medium px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-50">Accept Necessary</button>
+      <button data-cookie-accept class="text-xs sm:text-sm font-medium px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700">Accept All</button>
+    </div>
+  </div>
+</div>
+
+<header id="siteHeader" class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-100 transition-shadow">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 gap-4">
+      <a href="index.html" class="flex items-center gap-1.5 shrink-0">
+        <span class="text-2xl">🏃</span>
+        <span class="font-display font-extrabold text-xl sm:text-2xl"><span class="brand-gradient-text">Run</span><span class="text-gray-900">Pulse</span></span>
+      </a>
+      <form data-search-form class="hidden md:flex flex-1 max-w-md">
+        <div class="relative w-full">
+          <input type="text" placeholder="Search by sport, event or location..." class="w-full border border-gray-200 rounded-full py-2 pl-4 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"/>
+          <button type="submit" class="absolute right-1 top-1/2 -translate-y-1/2 bg-rose-600 hover:bg-rose-700 text-white rounded-full p-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.2-5.2m1.7-5.3a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </button>
+        </div>
+      </form>
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-gray-700">
+        <a href="index.html" class="hover:text-rose-600">Home</a>
+        <a href="events.html" class="hover:text-rose-600">Events</a>
+        <a href="create-event.html" class="hover:text-rose-600">Create an Event</a>
+      </nav>
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="login.html" class="text-sm font-semibold text-gray-700 hover:text-rose-600">Login</a>
+        <a href="register.html" class="text-sm font-semibold text-white rp-btn-primary px-4 py-2 rounded-full">Register</a>
+      </div>
+      <button id="menuBtn" class="lg:hidden p-2 text-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div id="mobileMenu" class="fixed inset-0 z-50 translate-x-full transition-transform duration-300 lg:hidden">
+  <div class="absolute inset-0 bg-black/40" onclick="document.getElementById('mobileMenu').classList.add('translate-x-full')"></div>
+  <div class="absolute right-0 top-0 h-full w-72 bg-white shadow-xl p-6 flex flex-col gap-6">
+    <div class="flex items-center justify-between">
+      <h2 class="font-display font-bold text-lg">Menu</h2>
+      <button id="menuCloseBtn" class="p-1 text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
+    </div>
+    <nav class="flex flex-col gap-4 text-gray-700 font-medium">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="create-event.html">Create an Event</a>
+    </nav>
+    <div class="mt-auto flex flex-col gap-3">
+      <a href="login.html" class="text-center border border-gray-300 rounded-full py-2 font-semibold">Login</a>
+      <a href="register.html" class="text-center rp-btn-primary text-white rounded-full py-2 font-semibold">Register</a>
+    </div>
+  </div>
+</div>
+
+<div id="eventNotFound" class="hidden max-w-2xl mx-auto text-center py-24 px-4">
+  <p class="text-6xl mb-4">🔍</p>
+  <h1 class="font-display font-bold text-2xl mb-2">Event not found</h1>
+  <p class="text-gray-500 mb-6">The event you're looking for doesn't exist or may have been removed.</p>
+  <a href="events.html" class="rp-btn-primary text-white font-semibold px-6 py-2.5 rounded-full">Browse Events</a>
+</div>
+
+<div id="eventContent" class="hidden">
+  <!-- Hero banner -->
+  <section id="heroBanner" class="relative bg-gradient-to-br from-rose-700 via-fuchsia-700 to-indigo-800 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+      <div class="flex flex-wrap items-center gap-2 text-xs mb-4">
+        <span id="statusBadge" class="bg-emerald-500 font-bold px-2.5 py-1 rounded-full">REGISTRATION OPEN</span>
+        <span id="trendingBadge" class="hidden bg-white/20 font-semibold px-2.5 py-1 rounded-full">🔥 Trending</span>
+      </div>
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div>
+          <h1 id="eventName" class="font-display font-extrabold text-2xl sm:text-4xl max-w-2xl"></h1>
+          <p id="eventMeta" class="mt-3 text-rose-100 text-sm sm:text-base"></p>
+        </div>
+        <button id="likeBtn" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 rounded-full px-4 py-2 text-sm font-semibold shrink-0 self-start">
+          <span>❤</span> <span id="likeCount"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid lg:grid-cols-[1fr_340px] gap-10">
+    <div>
+      <!-- Tabs -->
+      <div class="flex gap-6 border-b border-gray-200 overflow-x-auto text-sm font-semibold text-gray-500 whitespace-nowrap">
+        <button data-tab="overview" class="tab-underline active py-3">Overview</button>
+        <button data-tab="tickets" class="tab-underline py-3">Tickets</button>
+        <button data-tab="route" class="tab-underline py-3">Route</button>
+        <button data-tab="gallery" class="tab-underline py-3">Gallery</button>
+        <button data-tab="terms" class="tab-underline py-3">Terms</button>
+        <button data-tab="organizer" class="tab-underline py-3">Organizer</button>
+      </div>
+
+      <!-- Overview -->
+      <div id="tab-overview" class="pt-6 space-y-6">
+        <div>
+          <h2 class="font-display font-bold text-lg mb-2">About The Event</h2>
+          <div id="eventDescription" class="text-sm text-gray-600 space-y-3"></div>
+        </div>
+        <div>
+          <h3 class="font-display font-bold text-base mb-2">Race Facilities</h3>
+          <ul id="eventFacilities" class="grid grid-cols-2 gap-y-1.5 text-sm text-gray-600"></ul>
+        </div>
+        <div>
+          <h3 class="font-display font-bold text-base mb-2">Venue Facilities</h3>
+          <div id="venueFacilities" class="flex flex-wrap gap-2"></div>
+        </div>
+        <div>
+          <h3 class="font-display font-bold text-base mb-2">Awards &amp; Inclusions</h3>
+          <div id="eventAwards" class="flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+
+      <!-- Tickets -->
+      <div id="tab-tickets" class="hidden pt-6 space-y-4"></div>
+
+      <!-- Route -->
+      <div id="tab-route" class="hidden pt-6">
+        <h2 class="font-display font-bold text-lg mb-2">The Route</h2>
+        <p id="routeVenue" class="font-semibold text-sm"></p>
+        <p id="routeAddress" class="text-sm text-gray-500 mb-4"></p>
+        <div class="h-56 rounded-2xl bg-gray-100 flex items-center justify-center text-gray-400 border border-gray-200">
+          <div class="text-center">
+            <p class="text-3xl mb-1">🗺️</p>
+            <p class="text-sm">Map preview unavailable in demo</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery -->
+      <div id="tab-gallery" class="hidden pt-6">
+        <h2 class="font-display font-bold text-lg mb-2">Event Gallery</h2>
+        <p class="text-sm text-gray-500 mb-4">Explore official race-day visuals, venue previews, and event highlights.</p>
+        <div id="galleryGrid" class="grid grid-cols-2 sm:grid-cols-4 gap-3"></div>
+      </div>
+
+      <!-- Terms -->
+      <div id="tab-terms" class="hidden pt-6">
+        <h2 class="font-display font-bold text-lg mb-3">Event Terms — Registration &amp; Eligibility</h2>
+        <ol class="list-decimal list-inside text-sm text-gray-600 space-y-2">
+          <li>Confirmed registrations are non-refundable, non-transferable, and cannot be modified after payment.</li>
+          <li>Provide a secure email/mobile number as it will be the primary means of event communication.</li>
+          <li>Long-distance running is a strenuous sport; participants take full responsibility for their health and fitness.</li>
+          <li>Runners must consult a physician and undergo a medical check-up before participating.</li>
+          <li>The organizing committee is not liable for injury, loss, or damage during the event.</li>
+          <li>Race kit collection details will be shared via email/SMS closer to the event date.</li>
+          <li>Bib numbers and timing chips must be worn as instructed; unauthorized transfer is not allowed.</li>
+        </ol>
+      </div>
+
+      <!-- Organizer -->
+      <div id="tab-organizer" class="hidden pt-6">
+        <h2 class="font-display font-bold text-lg mb-3">Organizer</h2>
+        <div class="bg-white border border-gray-100 rounded-2xl p-5 flex items-center gap-4">
+          <div class="h-14 w-14 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-xl font-bold" id="organizerInitial"></div>
+          <div>
+            <p id="organizerName" class="font-display font-bold"></p>
+            <p id="organizerEmail" class="text-sm text-gray-500"></p>
+            <p id="organizerPhone" class="text-sm text-gray-500"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar summary -->
+    <aside class="lg:sticky lg:top-20 h-fit">
+      <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-5">
+        <p id="regEndsLabel" class="text-xs font-semibold text-rose-600 mb-3"></p>
+        <div class="space-y-3 text-sm text-gray-600">
+          <div class="flex items-start gap-2"><span>📅</span><span id="sidebarDate"></span></div>
+          <div class="flex items-start gap-2"><span>📍</span><span id="sidebarVenue"></span></div>
+          <div class="flex items-start gap-2"><span>🎟️</span><span id="sidebarTickets"></span></div>
+          <div class="flex items-start gap-2"><span>👁️</span><span id="sidebarViewed"></span></div>
+        </div>
+        <a id="registerCta" href="#tickets" class="mt-5 block text-center rp-btn-primary text-white font-semibold py-3 rounded-full">View Tickets</a>
+      </div>
+    </aside>
+  </main>
+</div>
+
+<footer class="bg-gray-950 text-gray-400 border-t border-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div>
+      <a href="index.html" class="flex items-center gap-1.5 mb-3">
+        <span class="text-2xl">🏃</span>
+        <span class="font-display font-extrabold text-xl"><span class="brand-gradient-text">Run</span><span class="text-white">Pulse</span></span>
+      </a>
+      <p class="text-sm">Join the running revolution. Connect with fellow runners across India.</p>
+    </div>
+    <div>
+      <h4 class="text-white font-semibold mb-3 text-sm">Explore</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="events.html" class="hover:text-white">All Events</a></li>
+        <li><a href="create-event.html" class="hover:text-white">Create an Event</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white font-semibold mb-3 text-sm">Account</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="login.html" class="hover:text-white">Login</a></li>
+        <li><a href="register.html" class="hover:text-white">Register</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white font-semibold mb-3 text-sm">Legal</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a></li>
+        <li><a href="purchase-policy.html" class="hover:text-white">Purchase Policy</a></li>
+        <li><a href="terms-of-service.html" class="hover:text-white">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-gray-800 py-5 text-center text-xs">© 2026 RunPulse India. All rights reserved.</div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/event-detail.js"></script>
+</body>
+</html>

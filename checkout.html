@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout — RunPulse India</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<header class="sticky top-0 z-40 bg-white border-b border-gray-100">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-1.5">
+      <span class="text-2xl">🏃</span>
+      <span class="font-display font-extrabold text-xl"><span class="brand-gradient-text">Run</span><span class="text-gray-900">Pulse</span></span>
+    </a>
+    <div class="flex items-center gap-2 text-xs text-gray-400">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+      Secure Checkout
+    </div>
+  </div>
+</header>
+
+<div id="notFoundState" class="hidden max-w-xl mx-auto text-center py-24 px-4">
+  <p class="text-6xl mb-4">🎫</p>
+  <h1 class="font-display font-bold text-2xl mb-2">No ticket selected</h1>
+  <p class="text-gray-500 mb-6">Please choose an event and ticket to continue checkout.</p>
+  <a href="events.html" class="rp-btn-primary text-white font-semibold px-6 py-2.5 rounded-full">Browse Events</a>
+</div>
+
+<div id="checkoutState" class="hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+  <!-- Step indicator -->
+  <div class="flex items-center gap-2 mb-8 text-xs sm:text-sm font-semibold">
+    <div id="stepInd1" class="flex items-center gap-2 text-rose-600">
+      <span class="h-6 w-6 rounded-full bg-rose-600 text-white flex items-center justify-center text-xs">1</span> Attendee Details
+    </div>
+    <div class="flex-1 h-px bg-gray-200"></div>
+    <div id="stepInd2" class="flex items-center gap-2 text-gray-400">
+      <span class="h-6 w-6 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-xs">2</span> Payment
+    </div>
+    <div class="flex-1 h-px bg-gray-200"></div>
+    <div id="stepInd3" class="flex items-center gap-2 text-gray-400">
+      <span class="h-6 w-6 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-xs">3</span> Confirmation
+    </div>
+  </div>
+
+  <div class="grid lg:grid-cols-[1fr_320px] gap-8">
+    <div>
+      <!-- Step 1: Attendee details -->
+      <div id="step1" class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+        <h2 class="font-display font-bold text-lg mb-4">Attendee Details</h2>
+        <form id="attendeeForm" class="grid sm:grid-cols-2 gap-4">
+          <div class="sm:col-span-2">
+            <label class="text-xs font-semibold text-gray-500">Full Name</label>
+            <input required name="fullName" type="text" class="mt-1 w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500" placeholder="As per ID proof">
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-gray-500">Email</label>
+            <input required name="email" type="email" class="mt-1 w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500" placeholder="you@example.com">
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-gray-500">Mobile Number</label>
+            <input required name="phone" type="tel" pattern="[0-9]{10}" maxlength="10" class="mt-1 w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500" placeholder="10-digit mobile number">
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-gray-500">Date of Birth</label>
+            <input required name="dob" type="date" class="mt-1 w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500">
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-gray-500">Gender</label>
+            <select required name="gender" class="mt-1 w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500">
+              <option value="">Select</option>
+              <option>Male</option><option>Female</option><option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-gray-500">T-Shirt Size</label>
+            <select required name="tshirt" class="mt-1 w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500">
+              <option value="">Select</option>
+              <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-gray-500">Emergency Contact Name</label>
+            <input required name="emName" type="text" class="mt-1 w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500">
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-gray-500">Emergency Contact Number</label>
+            <input required name="emPhone" type="tel" pattern="[0-9]{10}" maxlength="10" class="mt-1 w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500">
+          </div>
+          <label class="sm:col-span-2 flex items-start gap-2 text-xs text-gray-500 mt-2">
+            <input required type="checkbox" class="mt-0.5 accent-rose-600"> I agree to the event Terms &amp; Conditions and confirm the information above is accurate.
+          </label>
+          <div class="sm:col-span-2">
+            <button type="submit" class="w-full sm:w-auto rp-btn-primary text-white font-semibold px-8 py-2.5 rounded-full">Continue to Payment →</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Step 2: Payment -->
+      <div id="step2" class="hidden bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="font-display font-bold text-lg">Payment</h2>
+          <button id="backToStep1" class="text-xs font-semibold text-gray-500 hover:text-rose-600">← Edit Details</button>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 text-amber-800 text-xs rounded-lg px-3 py-2 mb-5">
+          🔒 Sandbox Payment Gateway — this is a demo checkout. No real payment is processed and no card data is transmitted or stored.
+        </div>
+
+        <div class="flex gap-2 mb-5 text-sm font-semibold border-b border-gray-200">
+          <button data-pay-tab="card" class="paytab-btn tab-underline active py-2 px-1">Card</button>
+          <button data-pay-tab="upi" class="paytab-btn tab-underline py-2 px-1">UPI</button>
+          <button data-pay-tab="netbanking" class="paytab-btn tab-underline py-2 px-1">Netbanking</button>
+        </div>
+
+        <form id="paymentForm">
+          <!-- Card -->
+          <div id="pay-card" class="space-y-4">
+            <div>
+              <label class="text-xs font-semibold text-gray-500">Card Number</label>
+              <input id="cardNumber" type="text" inputmode="numeric" maxlength="19" placeholder="1234 5678 9012 3456" class="mt-1 w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500">
+              <p id="cardError" class="text-xs text-rose-600 mt-1 hidden">Enter a valid 16-digit card number.</p>
+            </div>
+            <div>
+              <label class="text-xs font-semibold text-gray-500">Name on Card</label>
+              <input id="cardName" type="text" placeholder="As printed on card" class="mt-1 w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500">
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="text-xs font-semibold text-gray-500">Expiry (MM/YY)</label>
+                <input id="cardExpiry" type="text" maxlength="5" placeholder="MM/YY" class="mt-1 w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500">
+                <p id="expiryError" class="text-xs text-rose-600 mt-1 hidden">Enter a valid future expiry date.</p>
+              </div>
+              <div>
+                <label class="text-xs font-semibold text-gray-500">CVV</label>
+                <input id="cardCvv" type="password" inputmode="numeric" maxlength="3" placeholder="•••" class="mt-1 w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500">
+                <p id="cvvError" class="text-xs text-rose-600 mt-1 hidden">Enter a valid 3-digit CVV.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- UPI -->
+          <div id="pay-upi" class="hidden space-y-4">
+            <div>
+              <label class="text-xs font-semibold text-gray-500">UPI ID</label>
+              <input id="upiId" type="text" placeholder="yourname@upi" class="mt-1 w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500">
+              <p id="upiError" class="text-xs text-rose-600 mt-1 hidden">Enter a valid UPI ID (e.g. name@bank).</p>
+            </div>
+            <p class="text-xs text-gray-400">You will receive a collect request on your UPI app to approve this demo payment.</p>
+          </div>
+
+          <!-- Netbanking -->
+          <div id="pay-netbanking" class="hidden space-y-4">
+            <label class="text-xs font-semibold text-gray-500">Select Bank</label>
+            <select id="bankSelect" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500">
+              <option value="">Choose your bank</option>
+              <option>State Bank of India</option>
+              <option>HDFC Bank</option>
+              <option>ICICI Bank</option>
+              <option>Axis Bank</option>
+              <option>Kotak Mahindra Bank</option>
+              <option>Punjab National Bank</option>
+            </select>
+            <p id="bankError" class="text-xs text-rose-600 hidden">Please select a bank to continue.</p>
+          </div>
+
+          <button id="payNowBtn" type="submit" class="mt-6 w-full rp-btn-primary text-white font-semibold py-3 rounded-full flex items-center justify-center gap-2">
+            <span id="payNowLabel">Pay <span id="payAmountLabel"></span></span>
+          </button>
+          <p class="text-center text-xs text-gray-400 mt-3">By paying you agree to the Purchase Policy &amp; Terms of Service.</p>
+        </form>
+      </div>
+
+      <!-- Step 3: Confirmation -->
+      <div id="step3" class="hidden bg-white rounded-2xl border border-gray-100 shadow-sm p-8 text-center">
+        <div class="h-16 w-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto mb-4">✓</div>
+        <h2 class="font-display font-bold text-2xl mb-2">Registration Confirmed!</h2>
+        <p class="text-gray-500 text-sm mb-6">Your spot is booked. A confirmation email has been sent (demo) with your race details.</p>
+        <div class="bg-gray-50 rounded-xl p-5 text-left text-sm space-y-2 max-w-sm mx-auto">
+          <div class="flex justify-between"><span class="text-gray-500">Order ID</span><span id="confOrderId" class="font-semibold"></span></div>
+          <div class="flex justify-between"><span class="text-gray-500">Event</span><span id="confEvent" class="font-semibold text-right"></span></div>
+          <div class="flex justify-between"><span class="text-gray-500">Category</span><span id="confTicket" class="font-semibold"></span></div>
+          <div class="flex justify-between"><span class="text-gray-500">Amount Paid</span><span id="confAmount" class="font-semibold"></span></div>
+        </div>
+        <a id="viewOrderBtn" href="#" class="mt-6 inline-block rp-btn-primary text-white font-semibold px-8 py-2.5 rounded-full">View E-Ticket</a>
+      </div>
+    </div>
+
+    <!-- Order summary sidebar -->
+    <aside class="h-fit">
+      <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 lg:sticky lg:top-20">
+        <h3 class="font-display font-bold mb-4">Order Summary</h3>
+        <div class="flex gap-3 mb-4">
+          <div id="summaryThumb" class="h-14 w-14 rounded-lg bg-gray-200 shrink-0 flex items-center justify-center text-xl">🏃</div>
+          <div>
+            <p id="summaryEventName" class="font-semibold text-sm leading-snug"></p>
+            <p id="summaryEventMeta" class="text-xs text-gray-500 mt-0.5"></p>
+          </div>
+        </div>
+        <div class="border-t border-gray-100 pt-4 space-y-2 text-sm">
+          <div class="flex justify-between"><span class="text-gray-500" id="summaryTicketName"></span><span id="summaryTicketPrice"></span></div>
+          <div class="flex justify-between text-xs text-gray-400"><span>Convenience Fee</span><span id="summaryFee"></span></div>
+          <div class="flex justify-between text-xs text-gray-400"><span>GST (18% on fee)</span><span id="summaryGst"></span></div>
+        </div>
+        <div class="border-t border-gray-100 mt-4 pt-4 flex justify-between items-center">
+          <span class="font-semibold">Total</span>
+          <span id="summaryTotal" class="font-display font-bold text-xl text-rose-600"></span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer class="border-t border-gray-100 mt-10 py-8 text-center text-xs text-gray-400">
+  © 2026 RunPulse India. All rights reserved. ·
+  <a href="privacy-policy.html" class="hover:text-gray-600">Privacy</a> ·
+  <a href="purchase-policy.html" class="hover:text-gray-600">Purchase Policy</a>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/checkout.js"></script>
+</body>
+</html>

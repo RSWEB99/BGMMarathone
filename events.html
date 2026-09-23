@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discover Events — RunPulse India</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<div id="cookieBanner" class="hidden fixed bottom-0 inset-x-0 z-50 bg-white border-t border-gray-200 shadow-2xl">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center gap-4 justify-between">
+    <div>
+      <p class="font-semibold text-sm text-gray-900">Privacy Controls</p>
+      <p class="text-xs text-gray-500 mt-0.5">We use cookies to keep the site secure, remember your preferences, and understand usage patterns.</p>
+    </div>
+    <div class="flex gap-2 shrink-0">
+      <button id="cookieNecessaryBtn" class="text-xs sm:text-sm font-medium px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-50">Accept Necessary</button>
+      <button data-cookie-accept class="text-xs sm:text-sm font-medium px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700">Accept All</button>
+    </div>
+  </div>
+</div>
+
+<header id="siteHeader" class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-100 transition-shadow">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 gap-4">
+      <a href="index.html" class="flex items-center gap-1.5 shrink-0">
+        <span class="text-2xl">🏃</span>
+        <span class="font-display font-extrabold text-xl sm:text-2xl"><span class="brand-gradient-text">Run</span><span class="text-gray-900">Pulse</span></span>
+      </a>
+      <form data-search-form class="hidden md:flex flex-1 max-w-md">
+        <div class="relative w-full">
+          <input id="headerSearchInput" type="text" placeholder="Search by sport, event or location..." class="w-full border border-gray-200 rounded-full py-2 pl-4 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"/>
+          <button type="submit" class="absolute right-1 top-1/2 -translate-y-1/2 bg-rose-600 hover:bg-rose-700 text-white rounded-full p-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.2-5.2m1.7-5.3a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </button>
+        </div>
+      </form>
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-gray-700">
+        <a href="index.html" class="hover:text-rose-600">Home</a>
+        <a href="events.html" class="text-rose-600">Events</a>
+        <a href="create-event.html" class="hover:text-rose-600">Create an Event</a>
+      </nav>
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="login.html" class="text-sm font-semibold text-gray-700 hover:text-rose-600">Login</a>
+        <a href="register.html" class="text-sm font-semibold text-white rp-btn-primary px-4 py-2 rounded-full">Register</a>
+      </div>
+      <button id="menuBtn" class="lg:hidden p-2 text-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div id="mobileMenu" class="fixed inset-0 z-50 translate-x-full transition-transform duration-300 lg:hidden">
+  <div class="absolute inset-0 bg-black/40" onclick="document.getElementById('mobileMenu').classList.add('translate-x-full')"></div>
+  <div class="absolute right-0 top-0 h-full w-72 bg-white shadow-xl p-6 flex flex-col gap-6">
+    <div class="flex items-center justify-between">
+      <h2 class="font-display font-bold text-lg">Menu</h2>
+      <button id="menuCloseBtn" class="p-1 text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
+    </div>
+    <nav class="flex flex-col gap-4 text-gray-700 font-medium">
+      <a href="index.html">Home</a>
+      <a href="events.html" class="text-rose-600">Events</a>
+      <a href="create-event.html">Create an Event</a>
+    </nav>
+    <div class="mt-auto flex flex-col gap-3">
+      <a href="login.html" class="text-center border border-gray-300 rounded-full py-2 font-semibold">Login</a>
+      <a href="register.html" class="text-center rp-btn-primary text-white rounded-full py-2 font-semibold">Register</a>
+    </div>
+  </div>
+</div>
+
+<section class="bg-gradient-to-br from-rose-700 via-fuchsia-700 to-indigo-800 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
+    <h1 class="font-display font-extrabold text-2xl sm:text-4xl">Discover Events</h1>
+    <p class="mt-2 text-rose-100 text-sm sm:text-base max-w-2xl mx-auto">One platform for every run — from marathons and 10Ks to trail ultras and fun runs across India.</p>
+  </div>
+</section>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid lg:grid-cols-[260px_1fr] gap-8">
+  <!-- Filters -->
+  <aside class="lg:sticky lg:top-20 h-fit bg-white rounded-2xl border border-gray-100 shadow-sm p-5">
+    <h3 class="font-display font-bold text-lg mb-4">Filters</h3>
+
+    <div class="mb-5">
+      <label class="text-xs font-semibold text-gray-500 uppercase">Search</label>
+      <input id="filterSearch" type="text" placeholder="Event name or venue" class="mt-2 w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500">
+    </div>
+
+    <div class="mb-5">
+      <label class="text-xs font-semibold text-gray-500 uppercase">City</label>
+      <select id="filterCity" class="mt-2 w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500">
+        <option value="">All Cities</option>
+      </select>
+    </div>
+
+    <div class="mb-5">
+      <label class="text-xs font-semibold text-gray-500 uppercase">Distance</label>
+      <div id="filterDistance" class="mt-2 flex flex-wrap gap-2 text-xs"></div>
+    </div>
+
+    <div class="mb-5">
+      <label class="text-xs font-semibold text-gray-500 uppercase">Status</label>
+      <div class="mt-2 flex flex-col gap-2 text-sm">
+        <label class="flex items-center gap-2"><input type="radio" name="status" value="" class="filterStatus" checked> All</label>
+        <label class="flex items-center gap-2"><input type="radio" name="status" value="open" class="filterStatus"> Registration Open</label>
+        <label class="flex items-center gap-2"><input type="radio" name="status" value="closed" class="filterStatus"> Event Ended</label>
+      </div>
+    </div>
+
+    <button id="filterReset" class="w-full text-sm font-semibold text-rose-600 border border-rose-200 rounded-lg py-2 hover:bg-rose-50">Reset Filters</button>
+  </aside>
+
+  <!-- Results -->
+  <div>
+    <div class="flex items-center justify-between mb-4">
+      <p id="resultsCount" class="text-sm text-gray-500"></p>
+      <select id="sortBy" class="border border-gray-200 rounded-lg px-3 py-1.5 text-sm focus:outline-none">
+        <option value="date">Sort: Date (Upcoming)</option>
+        <option value="price-asc">Sort: Price (Low to High)</option>
+        <option value="price-desc">Sort: Price (High to Low)</option>
+      </select>
+    </div>
+    <div id="eventsGrid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-6"></div>
+    <p id="noResults" class="hidden text-center text-gray-400 py-16">No events match your filters. Try adjusting your search.</p>
+  </div>
+</main>
+
+<footer class="bg-gray-950 text-gray-400 border-t border-gray-800 mt-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div>
+      <a href="index.html" class="flex items-center gap-1.5 mb-3">
+        <span class="text-2xl">🏃</span>
+        <span class="font-display font-extrabold text-xl"><span class="brand-gradient-text">Run</span><span class="text-white">Pulse</span></span>
+      </a>
+      <p class="text-sm">Join the running revolution. Connect with fellow runners across India.</p>
+    </div>
+    <div>
+      <h4 class="text-white font-semibold mb-3 text-sm">Explore</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="events.html" class="hover:text-white">All Events</a></li>
+        <li><a href="create-event.html" class="hover:text-white">Create an Event</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white font-semibold mb-3 text-sm">Account</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="login.html" class="hover:text-white">Login</a></li>
+        <li><a href="register.html" class="hover:text-white">Register</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white font-semibold mb-3 text-sm">Legal</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a></li>
+        <li><a href="purchase-policy.html" class="hover:text-white">Purchase Policy</a></li>
+        <li><a href="terms-of-service.html" class="hover:text-white">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-gray-800 py-5 text-center text-xs">© 2026 RunPulse India. All rights reserved.</div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/events-render.js"></script>
+</body>
+</html>

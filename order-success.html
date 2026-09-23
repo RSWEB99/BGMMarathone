@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Ticket — RunPulse India</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<header class="border-b border-gray-100">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-1.5">
+      <span class="text-2xl">🏃</span>
+      <span class="font-display font-extrabold text-xl"><span class="brand-gradient-text">Run</span><span class="text-gray-900">Pulse</span></span>
+    </a>
+    <a href="events.html" class="text-sm font-semibold text-rose-600 hover:underline">Browse More Events</a>
+  </div>
+</header>
+
+<main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+  <div id="notFound" class="hidden text-center py-24">
+    <p class="text-6xl mb-4">🎫</p>
+    <h1 class="font-display font-bold text-2xl mb-2">Order not found</h1>
+    <p class="text-gray-500 mb-6">We couldn't find this order on this device.</p>
+    <a href="events.html" class="rp-btn-primary text-white font-semibold px-6 py-2.5 rounded-full">Browse Events</a>
+  </div>
+
+  <div id="ticketWrap" class="hidden">
+    <div class="text-center mb-6">
+      <div class="h-14 w-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mx-auto mb-3">✓</div>
+      <h1 class="font-display font-bold text-2xl">You're all set!</h1>
+      <p class="text-gray-500 text-sm mt-1">Show this e-ticket at the race kit collection desk.</p>
+    </div>
+
+    <div class="bg-white rounded-2xl border border-gray-100 shadow-lg overflow-hidden">
+      <div id="ticketBanner" class="h-24 bg-gradient-to-br from-rose-600 to-indigo-700 flex items-center px-6">
+        <div>
+          <p id="ticketEventName" class="text-white font-display font-bold text-lg"></p>
+          <p id="ticketEventMeta" class="text-white/80 text-xs"></p>
+        </div>
+      </div>
+      <div class="p-6 grid sm:grid-cols-2 gap-5 text-sm">
+        <div><p class="text-gray-400 text-xs">Order ID</p><p id="tOrderId" class="font-semibold"></p></div>
+        <div><p class="text-gray-400 text-xs">Category</p><p id="tTicket" class="font-semibold"></p></div>
+        <div><p class="text-gray-400 text-xs">Runner Name</p><p id="tName" class="font-semibold"></p></div>
+        <div><p class="text-gray-400 text-xs">T-Shirt Size</p><p id="tShirt" class="font-semibold"></p></div>
+        <div><p class="text-gray-400 text-xs">Email</p><p id="tEmail" class="font-semibold"></p></div>
+        <div><p class="text-gray-400 text-xs">Mobile</p><p id="tPhone" class="font-semibold"></p></div>
+        <div><p class="text-gray-400 text-xs">Amount Paid</p><p id="tAmount" class="font-semibold text-rose-600"></p></div>
+        <div><p class="text-gray-400 text-xs">Payment Method</p><p id="tMethod" class="font-semibold capitalize"></p></div>
+      </div>
+      <div class="border-t border-dashed border-gray-200 mx-6"></div>
+      <div class="p-6 flex items-center justify-between">
+        <div>
+          <p class="text-xs text-gray-400">Bib collection opens 2 days before the event</p>
+          <p class="text-xs text-gray-400">at the event venue between 10 AM – 7 PM</p>
+        </div>
+        <div class="h-16 w-16 bg-gray-900 rounded-lg flex items-center justify-center text-white text-[10px] text-center leading-tight">QR<br>CODE</div>
+      </div>
+    </div>
+
+    <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+      <button onclick="window.print()" class="border border-gray-300 rounded-full px-6 py-2.5 text-sm font-semibold hover:bg-gray-50">Print / Save PDF</button>
+      <a href="events.html" class="rp-btn-primary text-white text-center rounded-full px-6 py-2.5 text-sm font-semibold">Explore More Events</a>
+    </div>
+  </div>
+</main>
+
+<script src="assets/js/data.js"></script>
+<script>
+const params = new URLSearchParams(window.location.search);
+const order = RP.getOrder(params.get("orderId"));
+if (!order) {
+  document.getElementById("notFound").classList.remove("hidden");
+} else {
+  document.getElementById("ticketWrap").classList.remove("hidden");
+  const ev = RP.getById(order.eventId);
+  document.getElementById("ticketBanner").className = "h-24 bg-gradient-to-br " + (ev ? ev.gradient : "from-rose-600 to-indigo-700") + " flex items-center px-6";
+  document.getElementById("ticketEventName").textContent = order.eventName;
+  document.getElementById("ticketEventMeta").textContent = ev ? `${ev.dateLabel} · ${ev.venue}, ${ev.city}` : "";
+  document.getElementById("tOrderId").textContent = order.orderId;
+  document.getElementById("tTicket").textContent = order.ticketName;
+  document.getElementById("tName").textContent = order.attendee.fullName;
+  document.getElementById("tShirt").textContent = order.attendee.tshirt;
+  document.getElementById("tEmail").textContent = order.attendee.email;
+  document.getElementById("tPhone").textContent = order.attendee.phone;
+  document.getElementById("tAmount").textContent = RP.formatINR(order.amount);
+  document.getElementById("tMethod").textContent = order.paymentMethod;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --rp-primary: #db2777;
+  --rp-primary-dark: #be185d;
+  --rp-accent: #2563eb;
+}
+
+* { font-family: 'Inter', sans-serif; }
+h1, h2, h3, h4, .font-display { font-family: 'Poppins', sans-serif; }
+
+body { scroll-behavior: smooth; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #db2777; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #be185d; }
+
+.brand-gradient-text {
+  background: linear-gradient(90deg, #f97316, #db2777);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.rp-card {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.rp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -12px rgba(0,0,0,.18);
+}
+
+.rp-btn-primary {
+  background: linear-gradient(90deg, #db2777, #be185d);
+}
+.rp-btn-primary:hover {
+  background: linear-gradient(90deg, #be185d, #9d174d);
+}
+
+.fade-in { animation: rpFadeIn .5s ease both; }
+@keyframes rpFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.rp-spinner {
+  border: 3px solid rgba(255,255,255,.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  width: 20px; height: 20px;
+  animation: rpSpin .7s linear infinite;
+}
+@keyframes rpSpin { to { transform: rotate(360deg); } }
+
+.tab-underline {
+  position: relative;
+}
+.tab-underline.active {
+  color: var(--rp-primary);
+}
+.tab-underline.active::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  height: 2px;
+  background: var(--rp-primary);
+  border-radius: 2px;
+}
+
+[x-cloak] { display: none !important; }
