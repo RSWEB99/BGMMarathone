@@ -1,6 +1,41 @@
-/* Shared event data + helpers for the RunPulse India demo site */
+/* Shared event data + helpers for RUNADDA Elite Running Academy */
 
 const RP_EVENTS = [
+  {
+    id: "namma-belagavi-marathon",
+    name: "Namma Belagavi Marathon",
+    tagline: "Run To Save Nature",
+    city: "Belagavi",
+    venue: "Yermal",
+    address: "Yarmal Rajhansgarh Road, Belagavi, Karnataka",
+    date: "2026-11-29",
+    dateLabel: "Nov 29, 2026",
+    startTime: "5:30 AM",
+    regEndsLabel: "Registration ends in 34 days",
+    gradient: "from-amber-500 via-orange-600 to-slate-800",
+    trending: true,
+    featured: true,
+    status: "open",
+    priceMin: 700,
+    priceMax: 1800,
+    viewedRecently: 143,
+    likes: 62,
+    summary: "Challenge yourself on the panoramic Yarmal Rajhansgarh Road. Honor freedom fighters Kittur Rani Chennamma and Krantiveer Sangolli Rayanna with every stride.",
+    description: [
+      "The Namma Belagavi Marathon takes runners along the beautiful scenic route from Belagavi to Yarmal, past the historic fort and rolling countryside as the sun rises.",
+      "Organised by the Elite Masters Running Team, Belagavi, this edition is dedicated to honouring the legacy of freedom fighters Kittur Rani Chennamma and Krantiveer Sangolli Rayanna — run with purpose, run to save nature.",
+      "Registration includes a timing chip, finisher medal, event T-shirt, breakfast, and a digital finisher certificate."
+    ],
+    facilities: ["Run Surface: Road", "Profile: Rolling", "Route Measurement: Chip Timed", "Water Stations: Yes", "Distance Markers: Every 1km", "Traffic Free: Yes"],
+    venueFacilities: ["Changing Rooms", "First Aid", "Toilets", "Refreshments", "Bag Storage"],
+    awards: ["Finisher Medal", "Event T-Shirt", "Trophy for Top 3", "Digital Certificate", "Race Photos"],
+    tickets: [
+      { id: "half", name: "Half Marathon", type: "Individual", price: 1800, desc: "Includes T-shirt, timing chip, finisher medal & certificate." },
+      { id: "10k", name: "10K Run", type: "Individual", price: 1200, desc: "Includes T-shirt, timing chip & certificate." },
+      { id: "5k", name: "5K Fun Run", type: "Individual", price: 700, desc: "Includes T-shirt & finisher certificate." }
+    ],
+    organizer: { name: "Elite Masters Running Team, Belagavi", email: "office.pimt@runadda.in", phone: "+91 98220 11223" }
+  },
   {
     id: "mumbai-coastal-half",
     name: "Mumbai Coastal Half Marathon 2026",
@@ -315,6 +350,9 @@ const RP = {
   },
   trending() {
     return RP_EVENTS.filter(e => e.trending);
+  },
+  flagship() {
+    return this.getById("namma-belagavi-marathon");
   },
   featured() {
     return RP_EVENTS.filter(e => e.featured);

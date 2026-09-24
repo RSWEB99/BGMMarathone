@@ -3,55 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RunPulse India — Discover Marathons, Runs &amp; Fitness Events</title>
-<meta name="description" content="Find and register for marathons, half marathons, 10K runs and fitness events across India.">
+<title>Namma Belagavi Marathon — RUNADDA Elite Running Academy</title>
+<meta name="description" content="Namma Belagavi Marathon 2026 — Run to Save Nature. Sunday, 29th November 2026. Organised by Elite Masters Running Team, Belagavi.">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2220%22 font-size=%2220%22>🏃</text></svg>">
 </head>
 <body class="bg-gray-50 text-gray-900">
 
-<!-- Cookie Banner -->
-<div id="cookieBanner" class="hidden fixed bottom-0 inset-x-0 z-50 bg-white border-t border-gray-200 shadow-2xl">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center gap-4 justify-between">
-    <div>
-      <p class="font-semibold text-sm text-gray-900">Privacy Controls</p>
-      <p class="text-xs text-gray-500 mt-0.5">We use cookies to keep the site secure, remember your preferences, and understand usage patterns.</p>
-    </div>
-    <div class="flex gap-2 shrink-0">
-      <button id="cookieNecessaryBtn" class="text-xs sm:text-sm font-medium px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-50">Accept Necessary</button>
-      <button data-cookie-accept class="text-xs sm:text-sm font-medium px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700">Accept All</button>
-    </div>
-  </div>
-</div>
-
 <!-- Header -->
-<header id="siteHeader" class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-100 transition-shadow">
+<header id="siteHeader" class="ra-navbar sticky top-0 z-40 transition-shadow">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16 gap-4">
-      <a href="index.html" class="flex items-center gap-1.5 shrink-0">
-        <span class="text-2xl">🏃</span>
-        <span class="font-display font-extrabold text-xl sm:text-2xl"><span class="brand-gradient-text">Run</span><span class="text-gray-900">Pulse</span></span>
+    <div class="flex items-center justify-between h-20 gap-4">
+      <a href="index.html" class="flex items-center gap-2 shrink-0">
+        <img src="assets/images/logo-mark.svg" alt="RUNADDA Elite Running Academy" class="h-12 sm:h-14 w-auto">
       </a>
-      <form data-search-form class="hidden md:flex flex-1 max-w-md">
-        <div class="relative w-full">
-          <input type="text" placeholder="Search by sport, event or location..." class="w-full border border-gray-200 rounded-full py-2 pl-4 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"/>
-          <button type="submit" class="absolute right-1 top-1/2 -translate-y-1/2 bg-rose-600 hover:bg-rose-700 text-white rounded-full p-1.5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.2-5.2m1.7-5.3a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-          </button>
-        </div>
-      </form>
-      <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-gray-700">
-        <a href="index.html" class="text-rose-600">Home</a>
-        <a href="events.html" class="hover:text-rose-600">Events</a>
-        <a href="create-event.html" class="hover:text-rose-600">Create an Event</a>
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-bold tracking-wide text-gray-900">
+        <a href="index.html">HOME</a>
+        <a href="about-us.html">ABOUT US</a>
+        <a href="events.html">EVENTS</a>
       </nav>
-      <div class="hidden lg:flex items-center gap-3">
-        <a href="login.html" class="text-sm font-semibold text-gray-700 hover:text-rose-600">Login</a>
-        <a href="register.html" class="text-sm font-semibold text-white rp-btn-primary px-4 py-2 rounded-full">Register</a>
-      </div>
-      <button id="menuBtn" class="lg:hidden p-2 text-gray-700">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <a href="event-details.html?id=namma-belagavi-marathon#tickets" class="hidden sm:inline-block ra-btn-green text-white text-sm font-bold px-5 py-2.5 rounded-md">REGISTER NOW</a>
+      <button id="menuBtn" class="lg:hidden p-2 text-gray-900">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
   </div>
@@ -62,161 +36,108 @@
   <div class="absolute inset-0 bg-black/40" onclick="document.getElementById('mobileMenu').classList.add('translate-x-full')"></div>
   <div class="absolute right-0 top-0 h-full w-72 bg-white shadow-xl p-6 flex flex-col gap-6">
     <div class="flex items-center justify-between">
-      <h2 class="font-display font-bold text-lg">Menu</h2>
+      <img src="assets/images/logo-mark.svg" alt="RUNADDA Elite Running Academy" class="h-10 w-auto">
       <button id="menuCloseBtn" class="p-1 text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
     </div>
-    <nav class="flex flex-col gap-4 text-gray-700 font-medium">
-      <a href="index.html" class="text-rose-600">Home</a>
-      <a href="events.html">Events</a>
-      <a href="create-event.html">Create an Event</a>
+    <nav class="flex flex-col gap-4 text-gray-800 font-bold">
+      <a href="index.html">HOME</a>
+      <a href="about-us.html">ABOUT US</a>
+      <a href="events.html">EVENTS</a>
     </nav>
-    <div class="mt-auto flex flex-col gap-3">
-      <a href="login.html" class="text-center border border-gray-300 rounded-full py-2 font-semibold">Login</a>
-      <a href="register.html" class="text-center rp-btn-primary text-white rounded-full py-2 font-semibold">Register</a>
-    </div>
+    <a href="event-details.html?id=namma-belagavi-marathon#tickets" class="mt-auto text-center ra-btn-green text-white rounded-md py-2.5 font-bold">REGISTER NOW</a>
   </div>
 </div>
 
-<!-- Hero -->
-<section class="relative overflow-hidden bg-gradient-to-br from-rose-700 via-fuchsia-700 to-indigo-800 text-white">
-  <div class="absolute inset-0 opacity-20" style="background-image:radial-gradient(circle at 20% 20%, white 1px, transparent 1px), radial-gradient(circle at 80% 60%, white 1px, transparent 1px); background-size:60px 60px;"></div>
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center">
-    <p class="uppercase tracking-widest text-xs sm:text-sm font-semibold text-rose-200 mb-3">India's Running &amp; Fitness Events Platform</p>
-    <h1 class="font-display font-extrabold text-3xl sm:text-5xl leading-tight max-w-3xl mx-auto">Find your next race. Run your best story.</h1>
-    <p class="mt-4 text-rose-100 max-w-xl mx-auto text-sm sm:text-base">Discover marathons, half marathons, 10K runs and fitness challenges happening across India — and register in minutes.</p>
-    <form data-search-form class="mt-8 max-w-xl mx-auto flex bg-white rounded-full p-1.5 shadow-xl">
-      <input type="text" placeholder="Search by sport, event or location..." class="flex-1 rounded-full px-4 py-2.5 text-gray-900 text-sm focus:outline-none">
-      <button type="submit" class="rp-btn-primary text-white font-semibold text-sm px-6 py-2.5 rounded-full shrink-0">Search</button>
-    </form>
-    <div class="mt-6 flex flex-wrap justify-center gap-2 text-xs sm:text-sm">
-      <a href="events.html" class="bg-white/10 hover:bg-white/20 border border-white/30 rounded-full px-3 py-1.5">Marathons</a>
-      <a href="events.html" class="bg-white/10 hover:bg-white/20 border border-white/30 rounded-full px-3 py-1.5">10K Runs</a>
-      <a href="events.html" class="bg-white/10 hover:bg-white/20 border border-white/30 rounded-full px-3 py-1.5">Trail Runs</a>
-      <a href="events.html" class="bg-white/10 hover:bg-white/20 border border-white/30 rounded-full px-3 py-1.5">Fun Runs</a>
-      <a href="create-event.html" class="bg-white/10 hover:bg-white/20 border border-white/30 rounded-full px-3 py-1.5">Host an Event</a>
-    </div>
-  </div>
+<!-- Hero: poster image already contains the full event creative -->
+<section class="relative">
+  <a href="event-details.html?id=namma-belagavi-marathon#tickets" class="block" aria-label="Namma Belagavi Marathon — Run to Save Nature. Sunday, 29th November 2026. Register now.">
+    <img src="assets/images/hero-placeholder.svg" alt="Namma Belagavi Marathon poster — Run to Save Nature, Sunday 29th November 2026, Belagavi to Yarmal route. Organised by Elite Masters Running Team, Belagavi." class="w-full h-auto block">
+  </a>
 </section>
 
-<!-- Stats strip -->
+<!-- Race categories strip -->
 <section class="bg-white border-b border-gray-100">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-    <div><p class="font-display font-extrabold text-2xl sm:text-3xl text-rose-600">8+</p><p class="text-xs sm:text-sm text-gray-500 mt-1">Cities Covered</p></div>
-    <div><p class="font-display font-extrabold text-2xl sm:text-3xl text-rose-600">25K+</p><p class="text-xs sm:text-sm text-gray-500 mt-1">Runners Registered</p></div>
-    <div><p class="font-display font-extrabold text-2xl sm:text-3xl text-rose-600">120+</p><p class="text-xs sm:text-sm text-gray-500 mt-1">Events Hosted</p></div>
-    <div><p class="font-display font-extrabold text-2xl sm:text-3xl text-rose-600">4.8★</p><p class="text-xs sm:text-sm text-gray-500 mt-1">Runner Rating</p></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-3 gap-6 text-center">
+    <div>
+      <p class="font-display font-extrabold text-2xl sm:text-3xl" style="color:var(--ra-navy)">21.1K</p>
+      <p class="text-xs sm:text-sm text-gray-500 mt-1">Half Marathon · ₹1,800</p>
+    </div>
+    <div>
+      <p class="font-display font-extrabold text-2xl sm:text-3xl" style="color:var(--ra-navy)">10K</p>
+      <p class="text-xs sm:text-sm text-gray-500 mt-1">Timed Run · ₹1,200</p>
+    </div>
+    <div>
+      <p class="font-display font-extrabold text-2xl sm:text-3xl" style="color:var(--ra-navy)">5K</p>
+      <p class="text-xs sm:text-sm text-gray-500 mt-1">Fun Run · ₹700</p>
+    </div>
   </div>
 </section>
 
-<!-- Featured Events -->
-<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-  <div class="flex items-center justify-between mb-6">
-    <h2 class="font-display font-bold text-2xl sm:text-3xl flex items-center gap-2"><span class="text-rose-600">★</span> Featured Events</h2>
-    <a href="events.html" class="text-sm font-semibold text-rose-600 hover:underline hidden sm:block">View all →</a>
+<!-- About the race -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <div class="grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <p class="ra-word-marathon font-display font-extrabold text-xs tracking-widest mb-2">ABOUT THE RUN</p>
+      <h2 class="font-display font-extrabold text-2xl sm:text-3xl mb-4" style="color:var(--ra-navy)">A race with a purpose</h2>
+      <p class="text-sm text-gray-600 leading-relaxed mb-4">The Namma Belagavi Marathon is organised by the Elite Masters Running Team, Belagavi, as part of RUNADDA Elite Running Academy's mission to build a healthier, greener Karnataka — one stride at a time.</p>
+      <p class="text-sm text-gray-600 leading-relaxed mb-6">This edition honours the legacy of freedom fighters Kittur Rani Chennamma and Krantiveer Sangolli Rayanna, weaving heritage into every kilometre of the scenic Belagavi-to-Yarmal route.</p>
+      <a href="about-us.html" class="text-sm font-bold" style="color:var(--ra-green)">Learn more about the Academy →</a>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 text-center">
+        <p class="text-3xl mb-2">🏅</p>
+        <p class="font-display font-bold text-sm">Finisher Medal &amp; T-Shirt</p>
+      </div>
+      <div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 text-center">
+        <p class="text-3xl mb-2">⏱️</p>
+        <p class="font-display font-bold text-sm">Certified Chip Timing</p>
+      </div>
+      <div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 text-center">
+        <p class="text-3xl mb-2">🌿</p>
+        <p class="font-display font-bold text-sm">Run To Save Nature</p>
+      </div>
+      <div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 text-center">
+        <p class="text-3xl mb-2">🏆</p>
+        <p class="font-display font-bold text-sm">Trophy For Top 3</p>
+      </div>
+    </div>
   </div>
-  <div id="featuredGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
-  <div class="flex items-center justify-between mt-16 mb-6">
-    <h2 class="font-display font-bold text-2xl sm:text-3xl">🔥 Trending Events</h2>
-    <a href="events.html" class="text-sm font-semibold text-rose-600 hover:underline hidden sm:block">View all →</a>
-  </div>
-  <div id="trendingGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-
-  <!-- Why RunPulse -->
-  <div class="mt-20 grid md:grid-cols-3 gap-8">
-    <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-      <div class="h-11 w-11 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center mb-4 text-xl">🎟️</div>
-      <h3 class="font-display font-bold text-lg mb-2">Seamless Registration</h3>
-      <p class="text-sm text-gray-500">Pick your category, fill your details, and pay securely — all in under two minutes.</p>
+  <!-- Other events by the academy -->
+  <div class="mt-20">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="font-display font-bold text-2xl">More Events</h2>
+      <a href="events.html" class="text-sm font-bold" style="color:var(--ra-green)">View all →</a>
     </div>
-    <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-      <div class="h-11 w-11 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4 text-xl">📍</div>
-      <h3 class="font-display font-bold text-lg mb-2">Events Near You</h3>
-      <p class="text-sm text-gray-500">From Mumbai's coastline to Jaipur's forts — find races in every corner of India.</p>
-    </div>
-    <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-      <div class="h-11 w-11 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4 text-xl">🏅</div>
-      <h3 class="font-display font-bold text-lg mb-2">Verified Organizers</h3>
-      <p class="text-sm text-gray-500">Every event is listed by a verified running club, trust, or sports body.</p>
-    </div>
+    <div id="otherEventsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
   </div>
 </main>
 
-<!-- Newsletter -->
-<section class="bg-gray-950 text-white">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-14 text-center">
-    <h2 class="font-display font-bold text-2xl sm:text-3xl">Stay in the knowing</h2>
-    <p class="text-gray-400 text-sm mt-2 max-w-md mx-auto">Subscribe to the RunPulse newsletter to stay in the know of upcoming events and offers.</p>
-    <form id="newsletterForm" class="mt-6 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-      <input required type="email" placeholder="Enter your email address" class="flex-1 rounded-full px-4 py-2.5 text-gray-900 text-sm focus:outline-none">
-      <button type="submit" class="rp-btn-primary rounded-full px-6 py-2.5 text-sm font-semibold shrink-0">Subscribe</button>
-    </form>
-    <p class="text-xs text-gray-500 mt-3">We'll email you a confirmation link to activate your subscription.</p>
+<!-- Simple dark footer -->
+<footer class="ra-footer-bar">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs sm:text-sm">
+    <p>© 2026 Namma Belagavi Marathon | Organized by Elite Running Academy</p>
+    <p><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a> | <a href="terms-of-service.html" class="hover:text-white">Terms of Service</a></p>
   </div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-gray-950 text-gray-400 border-t border-gray-800">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-    <div>
-      <a href="index.html" class="flex items-center gap-1.5 mb-3">
-        <span class="text-2xl">🏃</span>
-        <span class="font-display font-extrabold text-xl"><span class="brand-gradient-text">Run</span><span class="text-white">Pulse</span></span>
-      </a>
-      <p class="text-sm">Join the running revolution. Connect with fellow runners across India.</p>
-    </div>
-    <div>
-      <h4 class="text-white font-semibold mb-3 text-sm">Explore</h4>
-      <ul class="space-y-2 text-sm">
-        <li><a href="events.html" class="hover:text-white">All Events</a></li>
-        <li><a href="events.html" class="hover:text-white">Marathons</a></li>
-        <li><a href="create-event.html" class="hover:text-white">Create an Event</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="text-white font-semibold mb-3 text-sm">Account</h4>
-      <ul class="space-y-2 text-sm">
-        <li><a href="login.html" class="hover:text-white">Login</a></li>
-        <li><a href="register.html" class="hover:text-white">Register</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="text-white font-semibold mb-3 text-sm">Legal</h4>
-      <ul class="space-y-2 text-sm">
-        <li><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a></li>
-        <li><a href="purchase-policy.html" class="hover:text-white">Purchase Policy</a></li>
-        <li><a href="terms-of-service.html" class="hover:text-white">Terms of Service</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="border-t border-gray-800 py-5 text-center text-xs">© 2026 RunPulse India. All rights reserved.</div>
 </footer>
-
-<button id="scrollTopBtn" class="hidden fixed bottom-6 right-6 bg-rose-600 hover:bg-rose-700 text-white rounded-full p-3 shadow-lg z-30">
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
-</button>
 
 <script src="assets/js/data.js"></script>
 <script src="assets/js/main.js"></script>
 <script>
-function eventCard(ev, badge) {
-  const badgeHtml = badge ? `<span class="absolute top-3 left-3 bg-amber-400 text-amber-900 text-[11px] font-bold px-2 py-1 rounded-full shadow">${badge}</span>` : "";
-  const trendingHtml = ev.trending ? `<span class="absolute top-3 right-3 bg-white/90 text-rose-600 text-[11px] font-bold px-2 py-1 rounded-full shadow">🔥 Trending</span>` : "";
+function eventCard(ev) {
   return `
   <a href="event-details.html?id=${ev.id}" class="rp-card fade-in block bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
-    <div class="relative h-40 bg-gradient-to-br ${ev.gradient} flex items-center justify-center">
-      ${badgeHtml}${trendingHtml}
-      <span class="text-5xl">🏃‍♂️</span>
+    <div class="relative h-36 bg-gradient-to-br ${ev.gradient} flex items-center justify-center">
+      <span class="text-4xl">🏃‍♂️</span>
     </div>
     <div class="p-4">
       <h3 class="font-display font-bold text-base leading-snug mb-1 line-clamp-2">${ev.name}</h3>
       <p class="text-xs text-gray-500 mb-2">${ev.dateLabel} · ${ev.city}</p>
-      <p class="text-sm font-semibold text-rose-600">${RP.formatINR(ev.priceMin)} - ${RP.formatINR(ev.priceMax)}</p>
+      <p class="text-sm font-semibold" style="color:var(--ra-green)">${RP.formatINR(ev.priceMin)} - ${RP.formatINR(ev.priceMax)}</p>
     </div>
   </a>`;
 }
-document.getElementById("featuredGrid").innerHTML = RP.featured().map(e => eventCard(e, "Featured")).join("");
-document.getElementById("trendingGrid").innerHTML = RP.trending().map(e => eventCard(e)).join("");
+document.getElementById("otherEventsGrid").innerHTML = RP.events.filter(e => e.id !== "namma-belagavi-marathon").slice(0, 3).map(eventCard).join("");
 </script>
 </body>
 </html>

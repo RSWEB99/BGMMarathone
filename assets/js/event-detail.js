@@ -2,14 +2,20 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
-  const ev = RP.getById(params.get("id"));
+  const ev = RP.getById(params.get("id")) || RP.flagship();
 
   if (!ev) {
     document.getElementById("eventNotFound").classList.remove("hidden");
     return;
   }
   document.getElementById("eventContent").classList.remove("hidden");
-  document.title = ev.name + " — RunPulse India";
+  document.title = ev.name + " — RUNADDA Elite Running Academy";
+
+  const headerRegisterBtn = document.getElementById("headerRegisterBtn");
+  if (headerRegisterBtn) headerRegisterBtn.addEventListener("click", (e) => { e.preventDefault(); openTicketsTab(); });
+
+  const footerCopy = document.getElementById("footerCopy");
+  if (footerCopy) footerCopy.textContent = `© 2026 ${ev.name} | Organized by Elite Running Academy`;
 
   const heroBanner = document.getElementById("heroBanner");
   heroBanner.className = "relative bg-gradient-to-br " + ev.gradient + " text-white";
@@ -64,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Gallery (placeholder tiles)
   document.getElementById("galleryGrid").innerHTML = [1, 2, 3, 4].map(n => `
-    <div class="h-28 sm:h-32 rounded-xl bg-gradient-to-br ${ev.gradient} flex items-center justify-center text-white text-xs font-semibold opacity-90">Photo ${n}</div>
+    <img src="assets/images/gallery-placeholder-${n}.svg" alt="Event gallery photo placeholder ${n}" class="h-28 sm:h-32 w-full object-cover rounded-xl">
   `).join("");
 
   // Organizer
@@ -96,13 +102,20 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("tab-" + btn.dataset.tab).classList.remove("hidden");
     });
   });
-  document.getElementById("registerCta").addEventListener("click", (e) => {
+
+  function openTicketsTab() {
     if (closed) return;
-    e.preventDefault();
     tabs.forEach(b => b.classList.remove("active"));
     document.querySelector('[data-tab="tickets"]').classList.add("active");
     document.querySelectorAll("[id^='tab-']").forEach(panel => panel.classList.add("hidden"));
     document.getElementById("tab-tickets").classList.remove("hidden");
     document.getElementById("tab-tickets").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  document.getElementById("registerCta").addEventListener("click", (e) => {
+    e.preventDefault();
+    openTicketsTab();
   });
+
+  if (window.location.hash === "#tickets") openTicketsTab();
 });

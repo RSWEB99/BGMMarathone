@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <title>Event gallery photo placeholder 2</title>
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#16a34a"/>
+      <stop offset="100%" stop-color="#0f2027"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g2)"/>
+  <g fill="#ffffff" fill-opacity="0.85">
+    <rect x="160" y="120" width="80" height="60" rx="6" fill="none" stroke="#ffffff" stroke-width="4"/>
+    <circle cx="180" cy="140" r="7"/>
+    <path d="M162 172 l18-22 12 14 10-12 18 22z"/>
+  </g>
+  <text x="200" y="230" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#ffffff">PHOTO 2</text>
+</svg>

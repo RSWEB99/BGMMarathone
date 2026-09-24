@@ -4,6 +4,14 @@
   --rp-primary: #db2777;
   --rp-primary-dark: #be185d;
   --rp-accent: #2563eb;
+
+  /* RUNADDA brand tokens */
+  --ra-olive: #d3d61e;
+  --ra-olive-dark: #b7ba18;
+  --ra-green: #1b6b3a;
+  --ra-green-dark: #145029;
+  --ra-navy: #16213f;
+  --ra-orange: #f4831f;
 }
 
 * { font-family: 'Inter', sans-serif; }
@@ -69,3 +77,48 @@ body { scroll-behavior: smooth; }
 }
 
 [x-cloak] { display: none !important; }
+
+/* RUNADDA header / nav */
+.ra-navbar { background: var(--ra-olive); }
+.ra-logo-icon { color: #0f1408; }
+.ra-btn-green {
+  background: var(--ra-green);
+}
+.ra-btn-green:hover { background: var(--ra-green-dark); }
+
+.ra-btn-yellow {
+  background: var(--ra-olive);
+  color: #14170a;
+}
+.ra-btn-yellow:hover { background: var(--ra-olive-dark); }
+
+/* Stylized event wordmark */
+.ra-word-namma { color: var(--ra-orange); }
+.ra-word-belagavi {
+  color: #ffffff;
+  -webkit-text-stroke: 1.5px var(--ra-navy);
+  text-shadow: 2px 2px 0 var(--ra-navy), -2px 2px 0 var(--ra-navy), 2px -2px 0 var(--ra-navy), -2px -2px 0 var(--ra-navy);
+}
+.ra-word-marathon { color: #2e7d32; }
+
+.ra-location-pin { color: var(--ra-orange); }
+.ra-location-text { color: var(--ra-green-dark); }
+
+/* Simple dark footer bar used across inner pages */
+.ra-footer-bar {
+  background: #14170a;
+  color: #cbd0b8;
+}
+
+/* Generic page-banner background (kept separate from the homepage poster image) */
+.ra-hero-photo {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,.12), transparent 40%),
+    linear-gradient(180deg, rgba(10,15,10,.15), rgba(10,10,5,.55)),
+    linear-gradient(115deg, #fef3c7 0%, #fdba74 22%, #ea9455 40%, #7c8f6e 60%, #3f5748 78%, #1c2a24 100%);
+}
+
+.ra-sponsor-strip img, .ra-sponsor-strip .ra-sponsor-placeholder {
+  filter: grayscale(0%);
+  opacity: .95;
+}

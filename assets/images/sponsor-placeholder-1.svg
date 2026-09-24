@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 70" width="220" height="70">
+  <title>Sponsor logo placeholder 1</title>
+  <rect x="1" y="1" width="218" height="68" rx="10" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.5"/>
+  <g fill="#ffffff" fill-opacity="0.9">
+    <path d="M30 22 l8 22h-4l-1.8-5h-8.4L22 44h-4l8-22h4zm-4.9 13.5h6.8L28.9 26z"/>
+  </g>
+  <text x="46" y="40" font-family="sans-serif" font-size="15" font-weight="700" fill="#ffffff" fill-opacity="0.9">SPONSOR LOGO</text>
+</svg>
