@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p class="font-display font-bold text-lg">${RP.formatINR(t.price)}</p>
         ${closed
           ? `<button disabled class="mt-2 bg-gray-200 text-gray-400 text-sm font-semibold px-5 py-2 rounded-full cursor-not-allowed">Closed</button>`
-          : `<a href="checkout.html?event=${ev.id}&ticket=${t.id}" class="mt-2 inline-block rp-btn-primary text-white text-sm font-semibold px-5 py-2 rounded-full">Register →</a>`
+          : `<a href="checkout.html?event=${ev.id}&ticket=${t.id}" class="mt-2 inline-block ra-btn-green text-white text-sm font-semibold px-5 py-2 rounded-full">Register →</a>`
         }
       </div>
     </div>

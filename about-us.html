@@ -7,7 +7,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
 
 <header id="siteHeader" class="ra-navbar sticky top-0 z-40 transition-shadow">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,7 +18,7 @@
       <nav class="hidden lg:flex items-center gap-8 text-sm font-bold tracking-wide text-gray-900">
         <a href="index.html">HOME</a>
         <a href="about-us.html" class="underline underline-offset-4">ABOUT US</a>
-        <a href="events.html">EVENTS</a>
+        <a href="events.html" class="hidden">EVENTS</a>
       </nav>
       <a href="event-details.html?id=namma-belagavi-marathon#tickets" class="hidden sm:inline-block ra-btn-green text-white text-sm font-bold px-5 py-2.5 rounded-md">REGISTER NOW</a>
       <button id="menuBtn" class="lg:hidden p-2 text-gray-900">
@@ -38,20 +38,20 @@
     <nav class="flex flex-col gap-4 text-gray-800 font-bold">
       <a href="index.html">HOME</a>
       <a href="about-us.html">ABOUT US</a>
-      <a href="events.html">EVENTS</a>
+      <a href="events.html" class="hidden">EVENTS</a>
     </nav>
     <a href="event-details.html?id=namma-belagavi-marathon#tickets" class="mt-auto text-center ra-btn-green text-white rounded-md py-2.5 font-bold">REGISTER NOW</a>
   </div>
 </div>
 
 <section class="relative ra-hero-photo">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
     <p class="text-white/80 text-xs font-bold tracking-widest mb-3">ENDURANCE · HERITAGE · PRIDE</p>
     <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-white drop-shadow">About RUNADDA Elite Running Academy</h1>
   </div>
 </section>
 
-<main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-14">
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-14 flex-1">
   <section>
     <p class="ra-word-marathon font-display font-extrabold text-xs tracking-widest mb-2">OUR STORY</p>
     <h2 class="font-display font-extrabold text-2xl sm:text-3xl mb-4" style="color:var(--ra-navy)">Building a running culture in Belagavi</h2>

@@ -7,10 +7,10 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
 
 <header class="ra-navbar">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-2">
       <img src="assets/images/logo-mark.svg" alt="RUNADDA Elite Running Academy" class="h-12 w-auto">
     </a>
@@ -18,15 +18,15 @@
   </div>
 </header>
 
-<main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-  <div id="notFound" class="hidden text-center py-24">
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1">
+  <div id="notFound" class="hidden max-w-2xl mx-auto text-center py-24">
     <p class="text-6xl mb-4">🎫</p>
     <h1 class="font-display font-bold text-2xl mb-2">Order not found</h1>
     <p class="text-gray-500 mb-6">We couldn't find this order on this device.</p>
     <a href="events.html" class="rp-btn-primary text-white font-semibold px-6 py-2.5 rounded-full">Browse Events</a>
   </div>
 
-  <div id="ticketWrap" class="hidden">
+  <div id="ticketWrap" class="hidden max-w-2xl mx-auto">
     <div class="text-center mb-6">
       <div class="h-14 w-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mx-auto mb-3">✓</div>
       <h1 class="font-display font-bold text-2xl">You're all set!</h1>
@@ -68,7 +68,7 @@
 </main>
 
 <footer class="ra-footer-bar mt-10">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs sm:text-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs sm:text-sm">
     <p>© 2026 Namma Belagavi Marathon | Organized by Elite Running Academy</p>
     <p><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a> | <a href="terms-of-service.html" class="hover:text-white">Terms of Service</a></p>
   </div>

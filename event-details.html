@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <style>.line-clamp-3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}</style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
 
 <header id="siteHeader" class="ra-navbar sticky top-0 z-40 transition-shadow">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,7 +19,7 @@
       <nav class="hidden lg:flex items-center gap-8 text-sm font-bold tracking-wide text-gray-900">
         <a href="index.html">HOME</a>
         <a href="about-us.html">ABOUT US</a>
-        <a href="events.html">EVENTS</a>
+        <a href="events.html" class="hidden">EVENTS</a>
       </nav>
       <a href="#tickets" id="headerRegisterBtn" class="hidden sm:inline-block ra-btn-green text-white text-sm font-bold px-5 py-2.5 rounded-md">REGISTER NOW</a>
       <button id="menuBtn" class="lg:hidden p-2 text-gray-900">
@@ -39,20 +39,20 @@
     <nav class="flex flex-col gap-4 text-gray-800 font-bold">
       <a href="index.html">HOME</a>
       <a href="about-us.html">ABOUT US</a>
-      <a href="events.html">EVENTS</a>
+      <a href="events.html" class="hidden">EVENTS</a>
     </nav>
     <a href="#tickets" class="mt-auto text-center ra-btn-green text-white rounded-md py-2.5 font-bold">REGISTER NOW</a>
   </div>
 </div>
 
-<div id="eventNotFound" class="hidden max-w-2xl mx-auto text-center py-24 px-4">
+<div id="eventNotFound" class="hidden flex-1 max-w-2xl mx-auto text-center py-24 px-4">
   <p class="text-6xl mb-4">🔍</p>
   <h1 class="font-display font-bold text-2xl mb-2">Event not found</h1>
   <p class="text-gray-500 mb-6">The event you're looking for doesn't exist or may have been removed.</p>
   <a href="events.html" class="rp-btn-primary text-white font-semibold px-6 py-2.5 rounded-full">Browse Events</a>
 </div>
 
-<div id="eventContent" class="hidden">
+<div id="eventContent" class="hidden flex-1 flex flex-col">
   <!-- Hero banner -->
   <section id="heroBanner" class="relative bg-gradient-to-br from-rose-700 via-fuchsia-700 to-indigo-800 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
@@ -72,10 +72,10 @@
     </div>
   </section>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid lg:grid-cols-[1fr_340px] gap-10">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10">
     <div>
       <!-- Tabs -->
-      <div class="flex gap-6 border-b border-gray-200 overflow-x-auto text-sm font-semibold text-gray-500 whitespace-nowrap">
+      <div class="flex gap-6 border-b border-gray-200 overflow-x-auto no-scrollbar text-sm font-semibold text-gray-500 whitespace-nowrap">
         <button data-tab="overview" class="tab-underline active py-3">Overview</button>
         <button data-tab="tickets" class="tab-underline py-3">Tickets</button>
         <button data-tab="route" class="tab-underline py-3">Route</button>
@@ -165,7 +165,7 @@
           <div class="flex items-start gap-2"><span>🎟️</span><span id="sidebarTickets"></span></div>
           <div class="flex items-start gap-2"><span>👁️</span><span id="sidebarViewed"></span></div>
         </div>
-        <a id="registerCta" href="#tickets" class="mt-5 block text-center rp-btn-primary text-white font-semibold py-3 rounded-full">View Tickets</a>
+        <a id="registerCta" href="#tickets" class="mt-5 block text-center ra-btn-green text-white font-semibold py-3 rounded-full">View Tickets</a>
       </div>
     </aside>
   </main>

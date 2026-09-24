@@ -19,6 +19,10 @@ h1, h2, h3, h4, .font-display { font-family: 'Poppins', sans-serif; }
 
 body { scroll-behavior: smooth; }
 
+/* Hide scrollbar on horizontally-swipeable strips (e.g. mobile tab bars) */
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
 ::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: #f1f1f1; }
 ::-webkit-scrollbar-thumb { background: #db2777; border-radius: 4px; }

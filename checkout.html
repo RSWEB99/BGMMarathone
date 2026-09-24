@@ -7,7 +7,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
 
 <header id="siteHeader" class="ra-navbar sticky top-0 z-40 transition-shadow">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,7 +18,7 @@
       <nav class="hidden lg:flex items-center gap-8 text-sm font-bold tracking-wide text-gray-900">
         <a href="index.html">HOME</a>
         <a href="about-us.html">ABOUT US</a>
-        <a href="events.html">EVENTS</a>
+        <a href="events.html" class="hidden">EVENTS</a>
       </nav>
       <div class="flex items-center gap-2 text-xs font-semibold text-gray-800">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
@@ -28,31 +28,31 @@
   </div>
 </header>
 
-<div id="notFoundState" class="hidden max-w-xl mx-auto text-center py-24 px-4">
+<div id="notFoundState" class="hidden flex-1 max-w-xl mx-auto text-center py-24 px-4">
   <p class="text-6xl mb-4">🎫</p>
   <h1 class="font-display font-bold text-2xl mb-2">No ticket selected</h1>
   <p class="text-gray-500 mb-6">Please choose an event and ticket to continue checkout.</p>
   <a href="events.html" class="rp-btn-primary text-white font-semibold px-6 py-2.5 rounded-full">Browse Events</a>
 </div>
 
-<div id="checkoutState" class="hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div id="checkoutState" class="hidden flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
   <!-- Step indicator -->
-  <div class="flex items-center gap-2 mb-8 text-xs sm:text-sm font-semibold">
-    <div id="stepInd1" class="flex items-center gap-2 text-rose-600">
-      <span class="h-6 w-6 rounded-full bg-rose-600 text-white flex items-center justify-center text-xs">1</span> Attendee Details
+  <div class="flex items-center gap-1 sm:gap-2 mb-8 text-xs sm:text-sm font-semibold">
+    <div id="stepInd1" class="flex items-center gap-1.5 sm:gap-2 text-rose-600 shrink-0">
+      <span class="h-6 w-6 rounded-full bg-rose-600 text-white flex items-center justify-center text-xs shrink-0">1</span> <span class="hidden sm:inline">Attendee Details</span>
     </div>
     <div class="flex-1 h-px bg-gray-200"></div>
-    <div id="stepInd2" class="flex items-center gap-2 text-gray-400">
-      <span class="h-6 w-6 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-xs">2</span> Payment
+    <div id="stepInd2" class="flex items-center gap-1.5 sm:gap-2 text-gray-400 shrink-0">
+      <span class="h-6 w-6 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-xs shrink-0">2</span> <span class="hidden sm:inline">Payment</span>
     </div>
     <div class="flex-1 h-px bg-gray-200"></div>
-    <div id="stepInd3" class="flex items-center gap-2 text-gray-400">
-      <span class="h-6 w-6 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-xs">3</span> Confirmation
+    <div id="stepInd3" class="flex items-center gap-1.5 sm:gap-2 text-gray-400 shrink-0">
+      <span class="h-6 w-6 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-xs shrink-0">3</span> <span class="hidden sm:inline">Confirmation</span>
     </div>
   </div>
 
-  <div class="grid lg:grid-cols-[1fr_320px] gap-8">
+  <div class="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-8">
     <div>
       <!-- Step 1: Attendee details -->
       <div id="step1" class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
@@ -221,7 +221,7 @@
 </div>
 
 <footer class="ra-footer-bar mt-10">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs sm:text-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs sm:text-sm">
     <p>© 2026 Namma Belagavi Marathon | Organized by Elite Running Academy</p>
     <p><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a> | <a href="terms-of-service.html" class="hover:text-white">Terms of Service</a></p>
   </div>

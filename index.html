@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2220%22 font-size=%2220%22>🏃</text></svg>">
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
 
 <!-- Header -->
 <header id="siteHeader" class="ra-navbar sticky top-0 z-40 transition-shadow">
@@ -21,7 +21,7 @@
       <nav class="hidden lg:flex items-center gap-8 text-sm font-bold tracking-wide text-gray-900">
         <a href="index.html">HOME</a>
         <a href="about-us.html">ABOUT US</a>
-        <a href="events.html">EVENTS</a>
+        <a href="events.html" class="hidden">EVENTS</a>
       </nav>
       <a href="event-details.html?id=namma-belagavi-marathon#tickets" class="hidden sm:inline-block ra-btn-green text-white text-sm font-bold px-5 py-2.5 rounded-md">REGISTER NOW</a>
       <button id="menuBtn" class="lg:hidden p-2 text-gray-900">
@@ -42,7 +42,7 @@
     <nav class="flex flex-col gap-4 text-gray-800 font-bold">
       <a href="index.html">HOME</a>
       <a href="about-us.html">ABOUT US</a>
-      <a href="events.html">EVENTS</a>
+      <a href="events.html" class="hidden">EVENTS</a>
     </nav>
     <a href="event-details.html?id=namma-belagavi-marathon#tickets" class="mt-auto text-center ra-btn-green text-white rounded-md py-2.5 font-bold">REGISTER NOW</a>
   </div>
@@ -74,7 +74,7 @@
 </section>
 
 <!-- About the race -->
-<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-1">
   <div class="grid md:grid-cols-2 gap-10 items-center">
     <div>
       <p class="ra-word-marathon font-display font-extrabold text-xs tracking-widest mb-2">ABOUT THE RUN</p>
@@ -103,8 +103,8 @@
     </div>
   </div>
 
-  <!-- Other events by the academy -->
-  <div class="mt-20">
+  <!-- Other events by the academy — temporarily hidden on the home page only, keep markup intact -->
+  <div class="mt-20 hidden">
     <div class="flex items-center justify-between mb-6">
       <h2 class="font-display font-bold text-2xl">More Events</h2>
       <a href="events.html" class="text-sm font-bold" style="color:var(--ra-green)">View all →</a>
