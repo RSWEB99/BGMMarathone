@@ -10,14 +10,14 @@ const RP_EVENTS = [
     address: "Yarmal Rajhansgarh Road, Belagavi, Karnataka",
     date: "2026-11-29",
     dateLabel: "Nov 29, 2026",
-    startTime: "5:30 AM",
+    startTime: "5:00 AM",
     regEndsLabel: "Registration ends in 34 days",
     gradient: "from-amber-500 via-orange-600 to-slate-800",
     trending: true,
     featured: true,
     status: "open",
-    priceMin: 700,
-    priceMax: 1800,
+    priceMin: 840,
+    priceMax: 1120,
     viewedRecently: 143,
     likes: 62,
     summary: "Challenge yourself on the panoramic Yarmal Rajhansgarh Road. Honor freedom fighters Kittur Rani Chennamma and Krantiveer Sangolli Rayanna with every stride.",
@@ -30,9 +30,10 @@ const RP_EVENTS = [
     venueFacilities: ["Changing Rooms", "First Aid", "Toilets", "Refreshments", "Bag Storage"],
     awards: ["Finisher Medal", "Event T-Shirt", "Trophy for Top 3", "Digital Certificate", "Race Photos"],
     tickets: [
-      { id: "half", name: "Half Marathon", type: "Individual", price: 1800, desc: "Includes T-shirt, timing chip, finisher medal & certificate." },
-      { id: "10k", name: "10K Run", type: "Individual", price: 1200, desc: "Includes T-shirt, timing chip & certificate." },
-      { id: "5k", name: "5K Fun Run", type: "Individual", price: 700, desc: "Includes T-shirt & finisher certificate." }
+      { id: "full", name: "Full Marathon", price: 1120, originalPrice: 1600, discountLabel: "30% Discount upto 15 Sep 2026", desc: "Includes Timing Chip, Medal, Breakfast, Race Day Photographs, Route Hydration Support" },
+      { id: "half", name: "Half Marathon", price: 1050, originalPrice: 1500, discountLabel: "30% Discount upto 15 Sep 2026", desc: "Includes Timing Chip, Medals, Breakfast, Race Day Photographs, Route Hydration Support" },
+      { id: "5k", name: "5K Run", price: 840, originalPrice: 1200, discountLabel: "30% Discount upto 15 Sep 2026", desc: "Includes Timing Chip, Medal, Breakfast, Race Day Photographs, Route Hydration Support" },
+      { id: "10k", name: "10K Run", price: 980, originalPrice: 1400, discountLabel: "30% Discount upto 15 Sep 2026", desc: "Includes Timing Chip, Medal, Breakfast, Route Hydration Support" }
     ],
     organizer: { name: "Elite Masters Running Team, Belagavi", email: "office.pimt@runadda.in", phone: "+91 98220 11223" }
   },

@@ -47,18 +47,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // Tickets
   const ticketsWrap = document.getElementById("tab-tickets");
   ticketsWrap.innerHTML = ev.tickets.map(t => `
-    <div class="flex items-center justify-between gap-4 bg-white border border-gray-100 rounded-2xl p-4 shadow-sm">
+    <div class="flex items-start sm:items-center justify-between gap-4 bg-white border border-gray-100 rounded-2xl p-4 shadow-sm">
       <div>
-        <p class="text-xs font-bold text-indigo-600 uppercase tracking-wide">${t.name}</p>
-        <p class="text-sm font-semibold text-gray-900 mt-0.5">${t.type}</p>
-        <p class="text-xs text-gray-500 mt-1 max-w-md">${t.desc}</p>
+        <p class="text-sm font-bold text-gray-900 uppercase tracking-wide">${t.name}</p>
+        <p class="font-display font-bold text-lg text-gray-900 mt-1">${RP.formatINR(t.price)}</p>
+        <p class="text-xs text-gray-500 mt-1 max-w-md">${t.originalPrice ? `(Original Price ${RP.formatINR(t.originalPrice)} - ${t.discountLabel}) ` : ""}${t.desc}</p>
         <p class="text-xs font-semibold ${closed ? "text-gray-400" : "text-emerald-600"} mt-2">${closed ? "Registration Closed" : "Tickets available"}</p>
       </div>
-      <div class="text-right shrink-0">
-        <p class="font-display font-bold text-lg">${RP.formatINR(t.price)}</p>
+      <div class="shrink-0">
         ${closed
-          ? `<button disabled class="mt-2 bg-gray-200 text-gray-400 text-sm font-semibold px-5 py-2 rounded-full cursor-not-allowed">Closed</button>`
-          : `<a href="checkout.html?event=${ev.id}&ticket=${t.id}" class="mt-2 inline-block ra-btn-green text-white text-sm font-semibold px-5 py-2 rounded-full">Register →</a>`
+          ? `<button disabled class="bg-gray-200 text-gray-400 text-sm font-semibold px-5 py-2 rounded-full cursor-not-allowed">Closed</button>`
+          : `<a href="checkout.html?event=${ev.id}&ticket=${t.id}" class="inline-block ra-btn-green text-white text-sm font-semibold px-5 py-2 rounded-full">Register →</a>`
         }
       </div>
     </div>
