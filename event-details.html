@@ -58,22 +58,18 @@
   <!-- Hero banner -->
   <section id="heroBanner" class="grid w-full text-white">
     <img src="assets/images/secondary-hero.jpg" alt="Runners on the road at sunrise" class="col-start-1 row-start-1 w-full h-full min-h-[260px] object-cover">
-    <div class="col-start-1 row-start-1 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-    <div class="col-start-1 row-start-1 flex items-end">
-      <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+    <div class="col-start-1 row-start-1 bg-gradient-to-b from-black/35 via-black/25 to-black/55"></div>
+    <div class="col-start-1 row-start-1 relative flex items-center">
+      <button id="likeBtn" class="absolute top-4 sm:top-6 right-4 sm:right-6 lg:right-8 flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 rounded-full px-4 py-2 text-sm font-semibold">
+        <span>❤</span> <span id="likeCount"></span>
+      </button>
+      <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 text-left">
         <div class="flex flex-wrap items-center gap-2 text-xs mb-4">
           <span id="statusBadge" class="bg-emerald-500 font-bold px-2.5 py-1 rounded-full">REGISTRATION OPEN</span>
           <span id="trendingBadge" class="hidden bg-white/20 font-semibold px-2.5 py-1 rounded-full">🔥 Trending</span>
         </div>
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div>
-            <h1 id="eventName" class="font-display font-extrabold text-2xl sm:text-4xl max-w-2xl"></h1>
-            <p id="eventMeta" class="mt-3 text-rose-100 text-sm sm:text-base"></p>
-          </div>
-          <button id="likeBtn" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 rounded-full px-4 py-2 text-sm font-semibold shrink-0 self-start">
-            <span>❤</span> <span id="likeCount"></span>
-          </button>
-        </div>
+        <h1 id="eventName" class="font-display font-extrabold text-2xl sm:text-4xl max-w-2xl"></h1>
+        <p id="eventMeta" class="mt-3 text-rose-100 text-sm sm:text-base"></p>
       </div>
     </div>
   </section>
