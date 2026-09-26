@@ -16,17 +16,19 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20 gap-4">
       <a href="index.html" class="flex items-center gap-2 shrink-0">
-        <img src="assets/images/logo-mark.svg" alt="RUNADDA Elite Running Academy" class="h-12 sm:h-14 w-auto">
+        <img src="assets/images/logo-mark.svg" alt="RUNADDA Elite Running Academy" class="h-14 sm:h-16 w-auto">
       </a>
-      <nav class="hidden lg:flex items-center gap-8 text-sm font-bold tracking-wide text-gray-900">
-        <a href="index.html">HOME</a>
-        <a href="about-us.html">ABOUT US</a>
-        <a href="events.html" class="hidden">EVENTS</a>
-      </nav>
-      <a href="event-details.html?id=namma-belagavi-marathon#tickets" class="hidden sm:inline-block ra-btn-green text-white text-sm font-bold px-5 py-2.5 rounded-md">REGISTER NOW</a>
-      <button id="menuBtn" class="lg:hidden p-2 text-gray-900">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
+      <div class="flex items-center gap-5 sm:gap-6 lg:gap-8">
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-bold tracking-wide text-gray-900">
+          <a href="index.html">HOME</a>
+          <a href="about-us.html">ABOUT US</a>
+          <a href="events.html" class="hidden">EVENTS</a>
+        </nav>
+        <a href="event-details.html?id=namma-belagavi-marathon#tickets" class="hidden sm:inline-block ra-btn-green text-white text-sm font-bold px-5 py-2.5 rounded-md">REGISTER NOW</a>
+        <button id="menuBtn" class="lg:hidden p-2 text-gray-900">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
     </div>
   </div>
 </header>
@@ -36,7 +38,7 @@
   <div class="absolute inset-0 bg-black/40" onclick="document.getElementById('mobileMenu').classList.add('translate-x-full')"></div>
   <div class="absolute right-0 top-0 h-full w-72 bg-white shadow-xl p-6 flex flex-col gap-6">
     <div class="flex items-center justify-between">
-      <img src="assets/images/logo-mark.svg" alt="RUNADDA Elite Running Academy" class="h-10 w-auto">
+      <img src="assets/images/logo-mark.svg" alt="RUNADDA Elite Running Academy" class="h-12 w-auto">
       <button id="menuCloseBtn" class="p-1 text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
     </div>
     <nav class="flex flex-col gap-4 text-gray-800 font-bold">
@@ -48,10 +50,10 @@
   </div>
 </div>
 
-<!-- Hero: poster image already contains the full event creative -->
+<!-- Hero: poster image already contains the full event creative, at its own (wide/short) natural aspect ratio — shown full width with no cropping. -->
 <section class="relative w-full">
   <img src="assets/images/hero-placeholder.svg" alt="Namma Belagavi Marathon poster — Run to Save Nature, Sunday 29th November 2026, Belagavi to Yarmal route. Organised by Elite Masters Running Team, Belagavi." class="w-full h-auto block">
-  <a href="event-details.html?id=namma-belagavi-marathon#tickets" class="absolute left-[5.1%] top-[80%] ra-btn-yellow font-display font-extrabold rounded-md shadow-lg tracking-wide" style="font-size: clamp(8px, 1.4vw, 17px); padding: clamp(3px, 0.8vw, 11px) clamp(9px, 2.4vw, 30px);">REGISTER NOW</a>
+  <a href="event-details.html?id=namma-belagavi-marathon#tickets" class="absolute left-[5.1%] top-[86.7%] ra-btn-yellow font-display font-extrabold rounded-md shadow-lg tracking-wide leading-none" style="font-size: clamp(4.5px, 0.95vw, 13px); padding: clamp(1px, 0.45vw, 7px) clamp(4px, 1.7vw, 20px);">REGISTER NOW</a>
 </section>
 
 <!-- Race categories strip -->

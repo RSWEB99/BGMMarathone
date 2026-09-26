@@ -17,8 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const footerCopy = document.getElementById("footerCopy");
   if (footerCopy) footerCopy.textContent = `© 2026 ${ev.name} | Organized by Elite Running Academy`;
 
-  const heroBanner = document.getElementById("heroBanner");
-  heroBanner.className = "relative bg-gradient-to-br " + ev.gradient + " text-white";
 
   document.getElementById("eventName").textContent = ev.name;
   document.getElementById("eventMeta").textContent = `${ev.dateLabel} · ${ev.venue}, ${ev.city}`;
