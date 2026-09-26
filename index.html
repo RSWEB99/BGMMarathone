@@ -6,7 +6,7 @@
 <title>Namma Belagavi Marathon — RUNADDA Elite Running Academy</title>
 <meta name="description" content="Namma Belagavi Marathon 2026 — Run to Save Nature. Sunday, 29th November 2026. Organised by Elite Masters Running Team, Belagavi.">
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=3">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2220%22 font-size=%2220%22>🏃</text></svg>">
 </head>
 <body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
@@ -50,10 +50,35 @@
   </div>
 </div>
 
-<!-- Hero: poster image already contains the full event creative, at its own (wide/short) natural aspect ratio — shown full width with no cropping. -->
-<section class="relative w-full">
-  <img src="assets/images/hero-placeholder.svg" alt="Namma Belagavi Marathon poster — Run to Save Nature, Sunday 29th November 2026, Belagavi to Yarmal route. Organised by Elite Masters Running Team, Belagavi." class="w-full h-auto block">
-  <a href="event-details.html?id=namma-belagavi-marathon#tickets" class="absolute left-[5.1%] top-[86.7%] ra-btn-yellow font-display font-extrabold rounded-md shadow-lg tracking-wide leading-none" style="font-size: clamp(4.5px, 0.95vw, 13px); padding: clamp(1px, 0.45vw, 7px) clamp(4px, 1.7vw, 20px);">REGISTER NOW</a>
+<!-- Hero: full poster photo (wordmark + credit baked in), badge + supporting content overlaid below it. -->
+<section class="grid w-full bg-white">
+  <img src="assets/images/hero-placeholder.jpg" alt="Namma Belagavi Marathon — Run To Save Nature, Sunday 29th November 2026. Organised by Elite Masters Running Team, Belagavi." class="col-start-1 row-start-1 w-full h-auto block">
+  <div class="col-start-1 row-start-1 flex items-start">
+    <div class="w-full pb-6 sm:pb-8">
+      <div class="pt-[3%]"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="inline-flex items-center gap-2 bg-white/95 rounded-lg px-3 py-2 shadow max-w-[260px] sm:max-w-none">
+          <svg class="ra-location-pin h-5 w-5 sm:h-6 sm:w-6 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg>
+          <p class="ra-location-text font-display font-extrabold text-[10px] sm:text-xs leading-tight">BEAUTIFUL SCENIC ROUTE OF<br>BELAGAVI TO YARMAL!</p>
+        </div>
+      </div>
+
+      <div class="pt-[23%]"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-[75%] sm:max-w-lg">
+          <p class="text-slate-800 text-xs sm:text-sm font-medium" style="text-shadow: 0 1px 3px rgba(255,255,255,0.9), 0 0 10px rgba(255,255,255,0.85);">
+            Challenge yourself on the panoramic Yarmal Rajhansgarh Road. Honor freedom fighters Kittur Rani Chennamma and Krantiveer Sangolli Rayanna with every stride.
+          </p>
+
+          <a href="event-details.html?id=namma-belagavi-marathon#tickets" class="inline-block mt-4 sm:mt-5 ra-btn-yellow font-display font-extrabold px-5 sm:px-7 py-2 sm:py-3 rounded-md shadow-lg text-xs sm:text-sm tracking-wide">REGISTER NOW</a>
+
+          <p class="mt-3 sm:mt-4 text-[10px] sm:text-xs font-bold tracking-[0.15em] text-slate-800" style="text-shadow: 0 1px 3px rgba(255,255,255,0.9), 0 0 10px rgba(255,255,255,0.85);">ENDURANCE &nbsp;–&nbsp; HERITAGE &nbsp;–&nbsp; PRIDE</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- Race categories strip -->
