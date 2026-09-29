@@ -58,16 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Search bars -> redirect to events.html with query
-  document.querySelectorAll("[data-search-form]").forEach(form => {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const input = form.querySelector("input");
-      const q = encodeURIComponent(input.value.trim());
-      window.location.href = "events.html" + (q ? "?q=" + q : "");
-    });
-  });
-
   // Scroll to top button
   const scrollTopBtn = document.getElementById("scrollTopBtn");
   if (scrollTopBtn) {
