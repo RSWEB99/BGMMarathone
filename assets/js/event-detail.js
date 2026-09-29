@@ -74,7 +74,13 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("organizerInitial").textContent = ev.organizer.name.charAt(0);
   document.getElementById("organizerName").textContent = ev.organizer.name;
   document.getElementById("organizerEmail").textContent = "✉ " + ev.organizer.email;
-  document.getElementById("organizerPhone").textContent = "☎ " + ev.organizer.phone;
+  document.getElementById("organizerPhone").textContent = "☎ " + (ev.organizer.contactPerson ? ev.organizer.contactPerson + " — " : "") + ev.organizer.phone;
+  const organizerLocation = document.getElementById("organizerLocation");
+  if (ev.organizer.location) organizerLocation.textContent = "📍 " + ev.organizer.location;
+  else organizerLocation.classList.add("hidden");
+  const organizerRaceDate = document.getElementById("organizerRaceDate");
+  if (ev.organizer.raceDateLabel) organizerRaceDate.textContent = "📅 Race Date: " + ev.organizer.raceDateLabel;
+  else organizerRaceDate.classList.add("hidden");
 
   // Sidebar
   document.getElementById("regEndsLabel").textContent = ev.regEndsLabel;

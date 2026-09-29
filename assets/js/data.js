@@ -35,7 +35,7 @@ const RP_EVENTS = [
       { id: "5k", name: "5K Run", price: 840, originalPrice: 1200, discountLabel: "30% Discount upto 15 Sep 2026", desc: "Includes Timing Chip, Medal, Breakfast, Race Day Photographs, Route Hydration Support" },
       { id: "10k", name: "10K Run", price: 980, originalPrice: 1400, discountLabel: "30% Discount upto 15 Sep 2026", desc: "Includes Timing Chip, Medal, Breakfast, Route Hydration Support" }
     ],
-    organizer: { name: "Elite Masters Running Team, Belagavi", email: "office.pimt@runadda.in", phone: "+91 98220 11223" }
+    organizer: { name: "Elite Masters Running Team, Belagavi", contactPerson: "Mr. Jagadish Shinde", phone: "+91 82838 75150", location: "Belagavi, Karnataka, India", raceDateLabel: "November 29, 2026", email: "eliterunningacademy@gmail.com" }
   },
   {
     id: "mumbai-coastal-half",
