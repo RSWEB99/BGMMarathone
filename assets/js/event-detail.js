@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="shrink-0">
         ${closed
           ? `<button disabled class="bg-gray-200 text-gray-400 text-sm font-semibold px-5 py-2 rounded-full cursor-not-allowed">Closed</button>`
-          : `<span class="inline-block bg-emerald-50 text-emerald-700 text-sm font-semibold px-5 py-2 rounded-full">Open</span>`
+          : `<a href="https://alpharacingsolution.com/e/namma-belagavi-marathon-2026" target="_blank" rel="noopener noreferrer" class="inline-block ra-btn-green text-white text-sm font-semibold px-5 py-2 rounded-full">Register Now</a>`
         }
       </div>
     </div>
