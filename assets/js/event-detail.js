@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="shrink-0">
         ${closed
           ? `<button disabled class="bg-gray-200 text-gray-400 text-sm font-semibold px-5 py-2 rounded-full cursor-not-allowed">Closed</button>`
-          : `<a href="checkout.html?event=${ev.id}&ticket=${t.id}" class="inline-block ra-btn-green text-white text-sm font-semibold px-5 py-2 rounded-full">Register →</a>`
+          : `<span class="inline-block bg-emerald-50 text-emerald-700 text-sm font-semibold px-5 py-2 rounded-full">Open</span>`
         }
       </div>
     </div>

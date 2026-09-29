@@ -341,11 +341,6 @@ const RP = {
   getById(id) {
     return RP_EVENTS.find(e => e.id === id);
   },
-  getTicket(eventId, ticketId) {
-    const ev = this.getById(eventId);
-    if (!ev) return null;
-    return ev.tickets.find(t => t.id === ticketId);
-  },
   formatINR(n) {
     return "₹" + Number(n).toLocaleString("en-IN");
   },
@@ -357,20 +352,5 @@ const RP = {
   },
   featured() {
     return RP_EVENTS.filter(e => e.featured);
-  },
-  saveOrder(order) {
-    const orders = JSON.parse(localStorage.getItem("rp_orders") || "[]");
-    orders.push(order);
-    localStorage.setItem("rp_orders", JSON.stringify(orders));
-  },
-  getOrder(orderId) {
-    const orders = JSON.parse(localStorage.getItem("rp_orders") || "[]");
-    return orders.find(o => o.orderId === orderId);
-  },
-  setCart(cart) {
-    sessionStorage.setItem("rp_cart", JSON.stringify(cart));
-  },
-  getCart() {
-    return JSON.parse(sessionStorage.getItem("rp_cart") || "null");
   }
 };
